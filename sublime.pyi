@@ -6,29 +6,38 @@ DipType = float
 LocationType = Tuple[str, str, Tuple[int, int]]
 PointType = int
 
-# Recursive type hinting is not supported so List and Dict are only defined
-# properly up to one or two levels deep then set explicitly to accept Any.
+# Recursive type hinting is not supported, so the List and Dict data structures
+# are only properly defined up to two levels deep then they are set explicitly
+# to accept Any.
 ValueType = Union[
+    str,
+    int,
+    float,
+    bool,
+    List[Union[
+        str,
+        int,
+        float,
+        bool,
+        List[Any],
+        Dict[str, Any]
+    ]],
     Dict[
-        Union[str, int],
+        str,
         Union[
-            bool, int, float, str,
-            List[
-                Union[
-                    bool, int, float, str,
-                    List[Any],
-                    Dict[Union[str, int], Any]
-                ]
-            ],
-            Dict[Union[str, int], Any]
-        ]
-    ],
-    int, float, str, bool,
-    List[
-        Union[
-            bool, int, float, str,
-            List[Any],
-            Dict[Union[str, int], Any]
+            str,
+            int,
+            float,
+            bool,
+            List[Union[
+                str,
+                int,
+                float,
+                bool,
+                List[Any],
+                Dict[str, Any]
+            ]],
+            Dict[str, Any]
         ]
     ]
 ]
