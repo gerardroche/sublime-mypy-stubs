@@ -1,14 +1,6 @@
-# flake8: noqa
-
 from typing import Any
-from typing import Callable
 from typing import Dict
-from typing import Iterator
 from typing import List
-from typing import Mapping
-from typing import Optional
-from typing import Sequence
-from typing import Sized
 from typing import Tuple
 from typing import Union
 
