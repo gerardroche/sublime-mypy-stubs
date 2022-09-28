@@ -12,9 +12,9 @@ from typing import Sized
 from typing import Tuple
 from typing import Union
 
-DipType = float
-LocationType = Tuple[str, str, Tuple[int, int]]
-PointType = int
+DIP = float
+Location = Tuple[str, str, Tuple[int, int]]
+Point = int
 
 # Recursive type hinting is not supported, so the List and Dict data structures
 # are only properly defined up to two levels deep then they are set explicitly
@@ -54,7 +54,7 @@ ValueType = Union[
 
 DictValueType = Dict[str, ValueType]
 
-VectorType = Tuple[DipType, DipType]
+Vector = Tuple[DIP, DIP]
 
 
 class _LogWriter:
