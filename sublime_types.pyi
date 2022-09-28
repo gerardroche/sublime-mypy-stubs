@@ -1,49 +1,15 @@
-from typing import Any
-from typing import Dict
-from typing import List
-from typing import Tuple
-from typing import Union
+# Don't evaluate type annotations at runtime
+from __future__ import annotations
 
-DIP = float
-Location = Tuple[str, str, Tuple[int, int]]
-Point = int
+from typing import Tuple, Union, List, Dict, Optional, Any
+from typing_extensions import TypeAlias
+from sublime import KindId, CompletionItem
 
-# Recursive type hinting is not supported, so the List and Dict data structures
-# are only properly defined up to two levels deep then they are set explicitly
-# to accept Any.
-ValueType = Union[
-    str,
-    int,
-    float,
-    bool,
-    List[Union[
-        str,
-        int,
-        float,
-        bool,
-        List[Any],
-        Dict[str, Any]
-    ]],
-    Dict[
-        str,
-        Union[
-            str,
-            int,
-            float,
-            bool,
-            List[Union[
-                str,
-                int,
-                float,
-                bool,
-                List[Any],
-                Dict[str, Any]
-            ]],
-            Dict[str, Any]
-        ]
-    ]
-]
-
-DictValueType = Dict[str, ValueType]
-
-Vector = Tuple[DIP, DIP]
+DIP: TypeAlias = 'float'
+Vector: TypeAlias = 'Tuple[DIP, DIP]'
+Point: TypeAlias = 'int'
+Value: TypeAlias = 'Union[bool, str, int, float, List[Any], Dict[str, Any]]'
+CommandArgs: TypeAlias = 'Optional[Dict[str, Value]]'
+Kind: TypeAlias = 'Tuple[KindId, str, str]'
+Event: TypeAlias = 'dict'
+CompletionValue: TypeAlias = 'Union[str, Tuple[str, str], CompletionItem]'

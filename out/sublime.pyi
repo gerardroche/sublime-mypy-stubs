@@ -1,19 +1,14 @@
-from __future__ import annotations
-
 import enum
 import io
 from _typeshed import Incomplete
-from sublime_types import CommandArgs as CommandArgs, CompletionValue as CompletionValue, DIP as DIP, Event as Event, Kind as Kind, Point as Point, Value as Value, Vector as Vector  # noqa: F401
+from sublime_types import CommandArgs as CommandArgs, CompletionValue as CompletionValue, DIP as DIP, Event as Event, Kind as Kind, Point as Point, Value as Value, Vector as Vector
 from typing import Callable, Iterator, Literal, Optional
-
-from typing import Union
-
 
 class _LogWriter(io.TextIOBase):
     buf: Incomplete
     def __init__(self) -> None: ...
     def flush(self) -> None: ...
-    def write(self, s) -> int: ...
+    def write(self, s) -> None: ...
 
 class HoverZone(enum.IntEnum):
     TEXT: int
@@ -471,7 +466,7 @@ class Sheet:
 class TextSheet(Sheet):
     def set_name(self, name: str): ...
 
-class ImageSheet(Sheet): ...  # noqa: E701
+class ImageSheet(Sheet): ...
 
 class HtmlSheet(Sheet):
     def set_name(self, name: str): ...
