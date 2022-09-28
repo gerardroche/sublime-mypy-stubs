@@ -8,9 +8,10 @@ from typing import Optional
 from typing import Tuple
 from typing import Union
 
-from sublime import DictValueType
+from sublime_types import DictValueType
+from sublime_types import Point
+
 from sublime import Edit
-from sublime import Point
 from sublime import Settings
 from sublime import View
 from sublime import Window
