@@ -1,11 +1,10 @@
 import enum
 import io
-from _typeshed import Incomplete
 from sublime_types import CommandArgs as CommandArgs, CompletionValue as CompletionValue, DIP as DIP, Kind as Kind, Point as Point, Value as Value, Vector as Vector
-from typing import Callable, Iterator, Literal, Optional
+from typing import Any, Callable, Iterable, Iterator, Literal, Optional
 
 class _LogWriter(io.TextIOBase):
-    buf: Incomplete
+    buf: Any
     def __init__(self) -> None: ...
     def flush(self) -> None: ...
     def write(self, s) -> None: ...
@@ -15,9 +14,9 @@ class HoverZone(enum.IntEnum):
     GUTTER: int
     MARGIN: int
 
-HOVER_TEXT: Incomplete
-HOVER_GUTTER: Incomplete
-HOVER_MARGIN: Incomplete
+HOVER_TEXT: Any
+HOVER_GUTTER: Any
+HOVER_MARGIN: Any
 
 class NewFileFlags(enum.IntFlag):
     NONE: int
@@ -30,14 +29,14 @@ class NewFileFlags(enum.IntFlag):
     CLEAR_TO_RIGHT: int
     FORCE_CLONE: int
 
-ENCODED_POSITION: Incomplete
-TRANSIENT: Incomplete
-FORCE_GROUP: Incomplete
-SEMI_TRANSIENT: Incomplete
-ADD_TO_SELECTION: Incomplete
-REPLACE_MRU: Incomplete
-CLEAR_TO_RIGHT: Incomplete
-FORCE_CLONE: Incomplete
+ENCODED_POSITION: Any
+TRANSIENT: Any
+FORCE_GROUP: Any
+SEMI_TRANSIENT: Any
+ADD_TO_SELECTION: Any
+REPLACE_MRU: Any
+CLEAR_TO_RIGHT: Any
+FORCE_CLONE: Any
 
 class FindFlags(enum.IntFlag):
     NONE: int
@@ -47,11 +46,11 @@ class FindFlags(enum.IntFlag):
     REVERSE: int
     WRAP: int
 
-LITERAL: Incomplete
-IGNORECASE: Incomplete
-WHOLEWORD: Incomplete
-REVERSE: Incomplete
-WRAP: Incomplete
+LITERAL: Any
+IGNORECASE: Any
+WHOLEWORD: Any
+REVERSE: Any
+WRAP: Any
 
 class QuickPanelFlags(enum.IntFlag):
     NONE: int
@@ -59,9 +58,9 @@ class QuickPanelFlags(enum.IntFlag):
     KEEP_OPEN_ON_FOCUS_LOST: int
     WANT_EVENT: int
 
-MONOSPACE_FONT: Incomplete
-KEEP_OPEN_ON_FOCUS_LOST: Incomplete
-WANT_EVENT: Incomplete
+MONOSPACE_FONT: Any
+KEEP_OPEN_ON_FOCUS_LOST: Any
+WANT_EVENT: Any
 
 class PopupFlags(enum.IntFlag):
     NONE: int
@@ -72,11 +71,11 @@ class PopupFlags(enum.IntFlag):
     HIDE_ON_CHARACTER_EVENT: int
 
 HTML: int
-COOPERATE_WITH_AUTO_COMPLETE: Incomplete
-HIDE_ON_MOUSE_MOVE: Incomplete
-HIDE_ON_MOUSE_MOVE_AWAY: Incomplete
-KEEP_ON_SELECTION_MODIFIED: Incomplete
-HIDE_ON_CHARACTER_EVENT: Incomplete
+COOPERATE_WITH_AUTO_COMPLETE: Any
+HIDE_ON_MOUSE_MOVE: Any
+HIDE_ON_MOUSE_MOVE_AWAY: Any
+KEEP_ON_SELECTION_MODIFIED: Any
+HIDE_ON_CHARACTER_EVENT: Any
 
 class RegionFlags(enum.IntFlag):
     NONE: int
@@ -92,18 +91,18 @@ class RegionFlags(enum.IntFlag):
     DRAW_SQUIGGLY_UNDERLINE: int
     NO_UNDO: int
 
-DRAW_EMPTY: Incomplete
-HIDE_ON_MINIMAP: Incomplete
-DRAW_EMPTY_AS_OVERWRITE: Incomplete
-PERSISTENT: Incomplete
-DRAW_NO_FILL: Incomplete
+DRAW_EMPTY: Any
+HIDE_ON_MINIMAP: Any
+DRAW_EMPTY_AS_OVERWRITE: Any
+PERSISTENT: Any
+DRAW_NO_FILL: Any
 DRAW_OUTLINED = DRAW_NO_FILL
-DRAW_NO_OUTLINE: Incomplete
-DRAW_SOLID_UNDERLINE: Incomplete
-DRAW_STIPPLED_UNDERLINE: Incomplete
-DRAW_SQUIGGLY_UNDERLINE: Incomplete
-NO_UNDO: Incomplete
-HIDDEN: Incomplete
+DRAW_NO_OUTLINE: Any
+DRAW_SOLID_UNDERLINE: Any
+DRAW_STIPPLED_UNDERLINE: Any
+DRAW_SQUIGGLY_UNDERLINE: Any
+NO_UNDO: Any
+HIDDEN: Any
 
 class QueryOperator(enum.IntEnum):
     EQUAL: int
@@ -113,12 +112,12 @@ class QueryOperator(enum.IntEnum):
     REGEX_CONTAINS: int
     NOT_REGEX_CONTAINS: int
 
-OP_EQUAL: Incomplete
-OP_NOT_EQUAL: Incomplete
-OP_REGEX_MATCH: Incomplete
-OP_NOT_REGEX_MATCH: Incomplete
-OP_REGEX_CONTAINS: Incomplete
-OP_NOT_REGEX_CONTAINS: Incomplete
+OP_EQUAL: Any
+OP_NOT_EQUAL: Any
+OP_REGEX_MATCH: Any
+OP_NOT_REGEX_MATCH: Any
+OP_REGEX_CONTAINS: Any
+OP_NOT_REGEX_CONTAINS: Any
 
 class PointClassification(enum.IntFlag):
     NONE: int
@@ -132,15 +131,15 @@ class PointClassification(enum.IntFlag):
     LINE_END: int
     EMPTY_LINE: int
 
-CLASS_WORD_START: Incomplete
-CLASS_WORD_END: Incomplete
-CLASS_PUNCTUATION_START: Incomplete
-CLASS_PUNCTUATION_END: Incomplete
-CLASS_SUB_WORD_START: Incomplete
-CLASS_SUB_WORD_END: Incomplete
-CLASS_LINE_START: Incomplete
-CLASS_LINE_END: Incomplete
-CLASS_EMPTY_LINE: Incomplete
+CLASS_WORD_START: Any
+CLASS_WORD_END: Any
+CLASS_PUNCTUATION_START: Any
+CLASS_PUNCTUATION_END: Any
+CLASS_SUB_WORD_START: Any
+CLASS_SUB_WORD_END: Any
+CLASS_LINE_START: Any
+CLASS_LINE_END: Any
+CLASS_EMPTY_LINE: Any
 
 class AutoCompleteFlags(enum.IntFlag):
     NONE: int
@@ -149,25 +148,25 @@ class AutoCompleteFlags(enum.IntFlag):
     DYNAMIC_COMPLETIONS: int
     INHIBIT_REORDER: int
 
-INHIBIT_WORD_COMPLETIONS: Incomplete
-INHIBIT_EXPLICIT_COMPLETIONS: Incomplete
-DYNAMIC_COMPLETIONS: Incomplete
-INHIBIT_REORDER: Incomplete
+INHIBIT_WORD_COMPLETIONS: Any
+INHIBIT_EXPLICIT_COMPLETIONS: Any
+DYNAMIC_COMPLETIONS: Any
+INHIBIT_REORDER: Any
 
 class CompletionItemFlags(enum.IntFlag):
     NONE: int
     KEEP_PREFIX: int
 
-COMPLETION_FLAG_KEEP_PREFIX: Incomplete
+COMPLETION_FLAG_KEEP_PREFIX: Any
 
 class DialogResult(enum.IntEnum):
     CANCEL: int
     YES: int
     NO: int
 
-DIALOG_CANCEL: Incomplete
-DIALOG_YES: Incomplete
-DIALOG_NO: Incomplete
+DIALOG_CANCEL: Any
+DIALOG_YES: Any
+DIALOG_NO: Any
 
 class UIElement(enum.IntEnum):
     SIDE_BAR: int
@@ -182,9 +181,9 @@ class PhantomLayout(enum.IntEnum):
     BELOW: int
     BLOCK: int
 
-LAYOUT_INLINE: Incomplete
-LAYOUT_BELOW: Incomplete
-LAYOUT_BLOCK: Incomplete
+LAYOUT_INLINE: Any
+LAYOUT_BELOW: Any
+LAYOUT_BLOCK: Any
 
 class KindId(enum.IntEnum):
     AMBIGUOUS: int
@@ -207,61 +206,61 @@ class KindId(enum.IntEnum):
     COLOR_DARK: int
     COLOR_LIGHT: int
 
-KIND_ID_AMBIGUOUS: Incomplete
-KIND_ID_KEYWORD: Incomplete
-KIND_ID_TYPE: Incomplete
-KIND_ID_FUNCTION: Incomplete
-KIND_ID_NAMESPACE: Incomplete
-KIND_ID_NAVIGATION: Incomplete
-KIND_ID_MARKUP: Incomplete
-KIND_ID_VARIABLE: Incomplete
-KIND_ID_SNIPPET: Incomplete
-KIND_ID_COLOR_REDISH: Incomplete
-KIND_ID_COLOR_ORANGISH: Incomplete
-KIND_ID_COLOR_YELLOWISH: Incomplete
-KIND_ID_COLOR_GREENISH: Incomplete
-KIND_ID_COLOR_CYANISH: Incomplete
-KIND_ID_COLOR_BLUISH: Incomplete
-KIND_ID_COLOR_PURPLISH: Incomplete
-KIND_ID_COLOR_PINKISH: Incomplete
-KIND_ID_COLOR_DARK: Incomplete
-KIND_ID_COLOR_LIGHT: Incomplete
-KIND_AMBIGUOUS: Incomplete
-KIND_KEYWORD: Incomplete
-KIND_TYPE: Incomplete
-KIND_FUNCTION: Incomplete
-KIND_NAMESPACE: Incomplete
-KIND_NAVIGATION: Incomplete
-KIND_MARKUP: Incomplete
-KIND_VARIABLE: Incomplete
-KIND_SNIPPET: Incomplete
+KIND_ID_AMBIGUOUS: Any
+KIND_ID_KEYWORD: Any
+KIND_ID_TYPE: Any
+KIND_ID_FUNCTION: Any
+KIND_ID_NAMESPACE: Any
+KIND_ID_NAVIGATION: Any
+KIND_ID_MARKUP: Any
+KIND_ID_VARIABLE: Any
+KIND_ID_SNIPPET: Any
+KIND_ID_COLOR_REDISH: Any
+KIND_ID_COLOR_ORANGISH: Any
+KIND_ID_COLOR_YELLOWISH: Any
+KIND_ID_COLOR_GREENISH: Any
+KIND_ID_COLOR_CYANISH: Any
+KIND_ID_COLOR_BLUISH: Any
+KIND_ID_COLOR_PURPLISH: Any
+KIND_ID_COLOR_PINKISH: Any
+KIND_ID_COLOR_DARK: Any
+KIND_ID_COLOR_LIGHT: Any
+KIND_AMBIGUOUS: Any
+KIND_KEYWORD: Any
+KIND_TYPE: Any
+KIND_FUNCTION: Any
+KIND_NAMESPACE: Any
+KIND_NAVIGATION: Any
+KIND_MARKUP: Any
+KIND_VARIABLE: Any
+KIND_SNIPPET: Any
 
 class SymbolSource(enum.IntEnum):
     ANY: int
     INDEX: int
     OPEN_FILES: int
 
-SYMBOL_SOURCE_ANY: Incomplete
-SYMBOL_SOURCE_INDEX: Incomplete
-SYMBOL_SOURCE_OPEN_FILES: Incomplete
+SYMBOL_SOURCE_ANY: Any
+SYMBOL_SOURCE_INDEX: Any
+SYMBOL_SOURCE_OPEN_FILES: Any
 
 class SymbolType(enum.IntEnum):
     ANY: int
     DEFINITION: int
     REFERENCE: int
 
-SYMBOL_TYPE_ANY: Incomplete
-SYMBOL_TYPE_DEFINITION: Incomplete
-SYMBOL_TYPE_REFERENCE: Incomplete
+SYMBOL_TYPE_ANY: Any
+SYMBOL_TYPE_DEFINITION: Any
+SYMBOL_TYPE_REFERENCE: Any
 
 class CompletionFormat(enum.IntEnum):
     TEXT: int
     SNIPPET: int
     COMMAND: int
 
-COMPLETION_FORMAT_TEXT: Incomplete
-COMPLETION_FORMAT_SNIPPET: Incomplete
-COMPLETION_FORMAT_COMMAND: Incomplete
+COMPLETION_FORMAT_TEXT: Any
+COMPLETION_FORMAT_SNIPPET: Any
+COMPLETION_FORMAT_COMMAND: Any
 
 def version() -> str: ...
 def platform() -> Literal['osx', 'linux', 'windows']: ...
@@ -277,9 +276,10 @@ def error_message(msg: str): ...
 def message_dialog(msg: str): ...
 def ok_cancel_dialog(msg: str, ok_title: str = ..., title: str = ...) -> bool: ...
 def yes_no_cancel_dialog(msg: str, yes_title: str = ..., no_title: str = ..., title: str = ...) -> DialogResult: ...
-def open_dialog(callback: Callable[[str | list[str] | None], None], file_types: list[tuple[str, list[str]]] = ..., directory: Optional[str] = ..., multi_select: bool = ..., allow_folders: bool = ...): ...
-def save_dialog(callback: Callable[[str | None], None], file_types: list[tuple[str, list[str]]] = ..., directory: Optional[str] = ..., name: Optional[str] = ..., extension: Optional[str] = ...): ...
-def select_folder_dialog(callback: Callable[[str | list[str] | None], None], directory: Optional[str] = ..., multi_select: bool = ...): ...
+def open_dialog(callback: Callable[[Union[str, list[str], None]], None], file_types: list[tuple[str, list[str]]] = ..., directory: Optional[str] = ..., multi_select: bool = ..., allow_folders: bool = ...): ...
+def save_dialog(callback: Callable[[Union[str, None]], None], file_types: list[tuple[str, list[str]]] = ..., directory: Optional[str] = ..., name: Optional[str] = ..., extension: Optional[str] = ...): ...
+def select_folder_dialog(callback: Callable[[Union[str, list[str], None]], None], directory: Optional[str] = ..., multi_select: bool = ...): ...
+def choose_font_dialog(callback: Callable[[Value], None], default: dict[str, Value] = ...): ...
 def run_command(cmd: str, args: CommandArgs = ...): ...
 def format_command(cmd: str, args: CommandArgs = ...) -> str: ...
 def html_format_command(cmd: str, args: CommandArgs = ...) -> str: ...
@@ -306,7 +306,7 @@ def score_selector(scope_name: str, selector: str) -> int: ...
 def load_resource(name: str) -> str: ...
 def load_binary_resource(name) -> bytes: ...
 def find_resources(pattern: str) -> list[str]: ...
-def encode_value(value: Value, pretty: bool = ...) -> str: ...
+def encode_value(value: Value, pretty: bool = ..., update_text: str = ...) -> str: ...
 def decode_value(data: str) -> Value: ...
 def expand_variables(value: Value, variables: dict[str, str]) -> Value: ...
 def load_settings(base_name: str) -> Settings: ...
@@ -320,9 +320,9 @@ def project_history() -> list[str]: ...
 def folder_history() -> list[str]: ...
 
 class Window:
-    window_id: Incomplete
-    settings_object: Incomplete
-    template_settings_object: Incomplete
+    window_id: Any
+    settings_object: Any
+    template_settings_object: Any
     def __init__(self, id: int) -> None: ...
     def __hash__(self) -> int: ...
     def __eq__(self, other): ...
@@ -373,7 +373,7 @@ class Window:
     def panels(self) -> list[str]: ...
     def get_output_panel(self, name: str): ...
     def show_input_panel(self, caption: str, initial_text: str, on_done: Optional[Callable[[str], None]], on_change: Optional[Callable[[str], None]], on_cancel: Optional[Callable[[], None]]): ...
-    def show_quick_panel(self, items: list[str] | list[list[str]] | list[QuickPanelItem], on_select: Callable[[int], None], flags=..., selected_index: int = ..., on_highlight: Optional[Callable[[int], None]] = ..., placeholder: Optional[str] = ...): ...
+    def show_quick_panel(self, items: Union[list[str], list[list[str]], list[QuickPanelItem]], on_select: Callable[[int], None], flags=..., selected_index: int = ..., on_highlight: Optional[Callable[[int], None]] = ..., placeholder: Optional[str] = ...): ...
     def is_sidebar_visible(self) -> bool: ...
     def set_sidebar_visible(self, flag: bool, animate: bool = ...): ...
     def is_minimap_visible(self) -> bool: ...
@@ -400,19 +400,19 @@ class Window:
     def status_message(self, msg: str): ...
 
 class Edit:
-    edit_token: Incomplete
-    def __init__(self, token) -> None: ...
+    edit_token: Any
+    def __init__(self, token: int) -> None: ...
 
 class Region:
-    a: Incomplete
-    b: Incomplete
-    xpos: Incomplete
+    a: Any
+    b: Any
+    xpos: Any
     def __init__(self, a: Point, b: Optional[Point] = ..., xpos: DIP = ...) -> None: ...
     def __iter__(self): ...
     def __len__(self) -> int: ...
     def __eq__(self, rhs: object) -> bool: ...
     def __lt__(self, rhs: Region) -> bool: ...
-    def __contains__(self, v: Region | Point) -> bool: ...
+    def __contains__(self, v: Union[Region, Point]) -> bool: ...
     def to_tuple(self) -> tuple[Point, Point]: ...
     def empty(self) -> bool: ...
     def begin(self) -> Point: ...
@@ -424,23 +424,23 @@ class Region:
     def intersects(self, region: Region) -> bool: ...
 
 class HistoricPosition:
-    pt: Incomplete
-    row: Incomplete
-    col: Incomplete
-    col_utf16: Incomplete
-    col_utf8: Incomplete
-    def __init__(self, pt, row, col, col_utf16, col_utf8) -> None: ...
+    pt: Any
+    row: Any
+    col: Any
+    col_utf16: Any
+    col_utf8: Any
+    def __init__(self, pt: Point, row: int, col: int, col_utf16: int, col_utf8: int) -> None: ...
 
 class TextChange:
-    a: Incomplete
-    b: Incomplete
-    len_utf16: Incomplete
-    len_utf8: Incomplete
-    str: Incomplete
-    def __init__(self, pa, pb, len_utf16, len_utf8, str) -> None: ...
+    a: Any
+    b: Any
+    len_utf16: Any
+    len_utf8: Any
+    str: Any
+    def __init__(self, pa: HistoricPosition, pb: HistoricPosition, len_utf16: int, len_utf8: int, s: str) -> None: ...
 
 class Selection:
-    view_id: Incomplete
+    view_id: Any
     def __init__(self, id) -> None: ...
     def __iter__(self) -> Iterator[Region]: ...
     def __len__(self) -> int: ...
@@ -451,15 +451,15 @@ class Selection:
     def __bool__(self) -> bool: ...
     def is_valid(self) -> bool: ...
     def clear(self) -> None: ...
-    def add(self, x: Region | Point): ...
-    def add_all(self, regions: Iterator[Region]): ...
+    def add(self, x: Union[Region, Point]): ...
+    def add_all(self, regions: Iterable[Union[Region, Point]]): ...
     def subtract(self, region: Region): ...
     def contains(self, region: Region) -> bool: ...
 
 def make_sheet(sheet_id): ...
 
 class Sheet:
-    sheet_id: Incomplete
+    sheet_id: Any
     def __init__(self, id) -> None: ...
     def __hash__(self) -> int: ...
     def __eq__(self, other: object) -> bool: ...
@@ -483,15 +483,15 @@ class HtmlSheet(Sheet):
     def set_contents(self, contents: str): ...
 
 class ContextStackFrame:
-    context_name: Incomplete
-    source_file: Incomplete
-    source_location: Incomplete
-    def __init__(self, context_name, source_file, source_location) -> None: ...
+    context_name: Any
+    source_file: Any
+    source_location: Any
+    def __init__(self, context_name: str, source_file: str, source_location: tuple[int, int]) -> None: ...
 
 class View:
-    view_id: Incomplete
-    selection: Incomplete
-    settings_object: Incomplete
+    view_id: Any
+    selection: Any
+    settings_object: Any
     def __init__(self, id) -> None: ...
     def __len__(self) -> int: ...
     def __hash__(self) -> int: ...
@@ -536,7 +536,7 @@ class View:
     def transform_region_from(self, region: Region, change_id: tuple[int, int, int]) -> Region: ...
     def run_command(self, cmd: str, args: CommandArgs = ...): ...
     def sel(self) -> Selection: ...
-    def substr(self, x: Region | Point) -> str: ...
+    def substr(self, x: Union[Region, Point]) -> str: ...
     def find(self, pattern: str, start_pt: Point, flags=...) -> Region: ...
     def find_all(self, pattern: str, flags=..., fmt: Optional[str] = ..., extractions: Optional[list[str]] = ...) -> list[Region]: ...
     def settings(self) -> Settings: ...
@@ -550,27 +550,29 @@ class View:
     def score_selector(self, pt: Point, selector: str) -> int: ...
     def find_by_selector(self, selector: str) -> list[Region]: ...
     def style(self) -> dict[str, str]: ...
-    def style_for_scope(self, scope: str) -> dict[str, str]: ...
+    def style_for_scope(self, scope: str) -> dict[str, Value]: ...
     def indented_region(self, pt: Point) -> Region: ...
     def indentation_level(self, pt: Point) -> int: ...
     def has_non_empty_selection_region(self) -> bool: ...
     def lines(self, region: Region) -> list[Region]: ...
     def split_by_newlines(self, region: Region) -> list[Region]: ...
-    def line(self, x: Region | Point) -> Region: ...
-    def full_line(self, x: Region | Point) -> Region: ...
-    def word(self, x: Region | Point) -> Region: ...
+    def line(self, x: Union[Region, Point]) -> Region: ...
+    def full_line(self, x: Union[Region, Point]) -> Region: ...
+    def word(self, x: Union[Region, Point]) -> Region: ...
     def classify(self, pt: Point) -> PointClassification: ...
     def find_by_class(self, pt: Point, forward: bool, classes: PointClassification, separators: str = ..., sub_word_separators: str = ...) -> Point: ...
-    def expand_by_class(self, x: Region | Point, classes: PointClassification, separators: str = ..., sub_word_separators: str = ...) -> Region: ...
+    def expand_by_class(self, x: Union[Region, Point], classes: PointClassification, separators: str = ..., sub_word_separators: str = ...) -> Region: ...
     def rowcol(self, tp: Point) -> tuple[int, int]: ...
     def rowcol_utf8(self, tp: Point) -> tuple[int, int]: ...
     def rowcol_utf16(self, tp: Point) -> tuple[int, int]: ...
     def text_point(self, row: int, col: int, *, clamp_column: bool = ...) -> Point: ...
     def text_point_utf8(self, row: int, col: int, *, clamp_column: bool = ...) -> Point: ...
     def text_point_utf16(self, row: int, col: int, *, clamp_column: bool = ...) -> Point: ...
+    def utf8_code_units(self, tp: Point = ...) -> int: ...
+    def utf16_code_units(self, tp: Point = ...) -> int: ...
     def visible_region(self) -> Region: ...
-    def show(self, location: Region | Selection | Point, show_surrounds: bool = ..., keep_to_left: bool = ..., animate: bool = ...): ...
-    def show_at_center(self, location: Region | Point, animate: bool = ...): ...
+    def show(self, location: Union[Region, Selection, Point], show_surrounds: bool = ..., keep_to_left: bool = ..., animate: bool = ...): ...
+    def show_at_center(self, location: Union[Region, Point], animate: bool = ...): ...
     def viewport_position(self) -> Vector: ...
     def set_viewport_position(self, xy: Vector, animate: bool = ...): ...
     def viewport_extent(self) -> Vector: ...
@@ -585,8 +587,8 @@ class View:
     def em_width(self) -> DIP: ...
     def is_folded(self, region: Region) -> bool: ...
     def folded_regions(self) -> list[Region]: ...
-    def fold(self, x: Region | list[Region]) -> bool: ...
-    def unfold(self, x: Region | list[Region]) -> list[Region]: ...
+    def fold(self, x: Union[Region, list[Region]]) -> bool: ...
+    def unfold(self, x: Union[Region, list[Region]]) -> list[Region]: ...
     def add_regions(self, key: str, regions: list[Region], scope: str = ..., icon: str = ..., flags=..., annotations: list[str] = ..., annotation_color: str = ..., on_navigate: Optional[Callable[[str], None]] = ..., on_close: Optional[Callable[[], None]] = ...): ...
     def get_regions(self, key: str) -> list[Region]: ...
     def erase_regions(self, key: str): ...
@@ -595,7 +597,7 @@ class View:
     def erase_phantom_by_id(self, pid: int): ...
     def query_phantom(self, pid: int) -> list[Region]: ...
     def query_phantoms(self, pids: list[int]) -> list[Region]: ...
-    def assign_syntax(self, syntax: str | Syntax): ...
+    def assign_syntax(self, syntax: Union[str, Syntax]): ...
     def set_syntax_file(self, syntax_file: str): ...
     def syntax(self) -> Optional[Syntax]: ...
     def symbols(self) -> list[tuple[Region, str]]: ...
@@ -620,11 +622,11 @@ class View:
     def hide_popup(self) -> None: ...
     def is_auto_complete_visible(self) -> bool: ...
     def preserve_auto_complete_on_focus_lost(self) -> None: ...
-    def export_to_html(self, regions: Optional[Region | list[Region]] = ..., minihtml: bool = ..., enclosing_tags: bool = ..., font_size: bool = ..., font_family: bool = ...): ...
+    def export_to_html(self, regions: Optional[Union[Region, list[Region]]] = ..., minihtml: bool = ..., enclosing_tags: bool = ..., font_size: bool = ..., font_family: bool = ...): ...
     def clear_undo_stack(self) -> None: ...
 
 class Buffer:
-    buffer_id: Incomplete
+    buffer_id: Any
     def __init__(self, id) -> None: ...
     def __hash__(self) -> int: ...
     def __eq__(self, other: object) -> bool: ...
@@ -634,7 +636,7 @@ class Buffer:
     def primary_view(self) -> View: ...
 
 class Settings:
-    settings_id: Incomplete
+    settings_id: Any
     def __init__(self, id) -> None: ...
     def __getitem__(self, key: str) -> Value: ...
     def __setitem__(self, key: str, value: Value): ...
@@ -651,43 +653,43 @@ class Settings:
     def clear_on_change(self, tag: str): ...
 
 class Phantom:
-    region: Incomplete
-    content: Incomplete
-    layout: Incomplete
-    on_navigate: Incomplete
-    id: Incomplete
-    def __init__(self, region, content, layout, on_navigate: Incomplete | None = ...) -> None: ...
+    region: Any
+    content: Any
+    layout: Any
+    on_navigate: Any
+    id: Any
+    def __init__(self, region: Region, content: str, layout: PhantomLayout, on_navigate: Callable[[str], None] = ...) -> None: ...
     def __eq__(self, rhs: object) -> bool: ...
     def to_tuple(self) -> tuple[tuple[Point, Point], str, PhantomLayout, Optional[Callable[[str], None]]]: ...
 
 class PhantomSet:
-    view: Incomplete
-    key: Incomplete
-    phantoms: Incomplete
-    def __init__(self, view, key: str = ...) -> None: ...
+    view: Any
+    key: Any
+    phantoms: Any
+    def __init__(self, view: View, key: str = ...) -> None: ...
     def __del__(self) -> None: ...
-    def update(self, phantoms: Iterator[Phantom]): ...
+    def update(self, phantoms: Iterable[Phantom]): ...
 
 class Html:
-    data: Incomplete
-    def __init__(self, data) -> None: ...
+    data: Any
+    def __init__(self, data: str) -> None: ...
 
 class CompletionList:
-    target: Incomplete
-    completions: Incomplete
-    flags: Incomplete
+    target: Any
+    completions: Any
+    flags: Any
     def __init__(self, completions: Optional[list[CompletionValue]] = ..., flags=...) -> None: ...
     def set_completions(self, completions: list[CompletionValue], flags=...): ...
 
 class CompletionItem:
-    trigger: Incomplete
-    annotation: Incomplete
-    completion: Incomplete
-    completion_format: Incomplete
-    kind: Incomplete
-    details: Incomplete
-    flags: Incomplete
-    def __init__(self, trigger, annotation: str = ..., completion: str = ..., completion_format=..., kind=..., details: str = ..., flags=...) -> None: ...
+    trigger: Any
+    annotation: Any
+    completion: Any
+    completion_format: Any
+    kind: Any
+    details: Any
+    flags: Any
+    def __init__(self, trigger: str, annotation: str = ..., completion: str = ..., completion_format=..., kind=..., details: str = ..., flags=...) -> None: ...
     def __eq__(self, rhs: object) -> bool: ...
     @classmethod
     def snippet_completion(cls, trigger: str, snippet: str, annotation: str = ..., kind=..., details: str = ...) -> CompletionItem: ...
@@ -701,44 +703,44 @@ def find_syntax_by_scope(scope: str) -> list[Syntax]: ...
 def find_syntax_for_file(path, first_line: str = ...) -> Optional[Syntax]: ...
 
 class Syntax:
-    path: Incomplete
-    name: Incomplete
-    hidden: Incomplete
-    scope: Incomplete
-    def __init__(self, path, name, hidden, scope) -> None: ...
+    path: Any
+    name: Any
+    hidden: Any
+    scope: Any
+    def __init__(self, path: str, name: str, hidden: bool, scope: str) -> None: ...
     def __eq__(self, other: object) -> bool: ...
     def __hash__(self) -> int: ...
 
 class QuickPanelItem:
-    trigger: Incomplete
-    details: Incomplete
-    annotation: Incomplete
-    kind: Incomplete
-    def __init__(self, trigger, details: str = ..., annotation: str = ..., kind=...) -> None: ...
+    trigger: Any
+    details: Any
+    annotation: Any
+    kind: Any
+    def __init__(self, trigger: str, details: str = ..., annotation: str = ..., kind=...) -> None: ...
 
 class ListInputItem:
-    text: Incomplete
-    value: Incomplete
-    details: Incomplete
-    annotation: Incomplete
-    kind: Incomplete
-    def __init__(self, text, value, details: str = ..., annotation: str = ..., kind=...) -> None: ...
+    text: Any
+    value: Any
+    details: Any
+    annotation: Any
+    kind: Any
+    def __init__(self, text: str, value: Any, details: str = ..., annotation: str = ..., kind=...) -> None: ...
 
 class SymbolRegion:
-    name: Incomplete
-    region: Incomplete
-    syntax: Incomplete
-    type: Incomplete
-    kind: Incomplete
-    def __init__(self, name, region, syntax, type, kind) -> None: ...
+    name: Any
+    region: Any
+    syntax: Any
+    type: Any
+    kind: Any
+    def __init__(self, name: str, region: Region, syntax: str, type: SymbolType, kind: Kind) -> None: ...
 
 class SymbolLocation:
-    path: Incomplete
-    display_name: Incomplete
-    row: Incomplete
-    col: Incomplete
-    syntax: Incomplete
-    type: Incomplete
-    kind: Incomplete
-    def __init__(self, path, display_name, row, col, syntax, type, kind) -> None: ...
+    path: Any
+    display_name: Any
+    row: Any
+    col: Any
+    syntax: Any
+    type: Any
+    kind: Any
+    def __init__(self, path: str, display_name: str, row: int, col: int, syntax: str, type: SymbolType, kind: Kind) -> None: ...
     def path_encoded_position(self) -> str: ...
